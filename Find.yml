@@ -2,11 +2,11 @@
 - name: Find Example
   hosts: all
   tasks:
-   - name : Find files older than 5 days
+   - name : Find files less than 30 days
      find:
        paths: /var/log
        patterns: '*.log'
-       age: 5d
+       age: -30d
        age_stamp: mtime
      register: output
 
