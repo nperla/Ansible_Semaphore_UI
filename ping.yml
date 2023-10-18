@@ -1,9 +1,7 @@
 ---
-- name: Run ipconfig on Windows Server
-  hosts: all
-  collections:
-    - community.windows
+- name: Install community.windows Ansible collection
+  hosts: all  # Assuming you want to install the collection on the control machine
   tasks:
-    - name: Run ping
-      win_ping:
-
+    - name: Install community.windows collection
+      community.general.collection:
+        name: community.windows
