@@ -1,6 +1,6 @@
 ---
 - name: Run ipconfig on Windows Server
-  hosts: windows
+  hosts: all
   tasks:
     - name: Run ipconfig /all
       win_command: ipconfig /all
