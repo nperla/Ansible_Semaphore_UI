@@ -2,7 +2,7 @@
 - name: Run ipconfig on Windows Server
   hosts: all
   collections:
-          - community.windows
+    - community.windows
   tasks:
     - name: Run ping
       win_ping:
