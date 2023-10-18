@@ -2,10 +2,6 @@
 - name: Run ipconfig on Windows Server
   hosts: all
   tasks:
-    - name: Run ipconfig /all
-      win_command: ipconfig /all
-      register: ipconfig_output
+    - name: Run ping
+      win_ping:
 
-    - name: Display ipconfig output
-      debug:
-        var: ipconfig_output.stdout
