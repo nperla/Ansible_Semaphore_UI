@@ -5,18 +5,24 @@
     - name: Run ipconfig /all
       win_command: ipconfig /all
       register: ipconfig_output
-    - name: Display ipconfig output
-      debug:
+    - debug:
         var: ipconfig_output.stdout
 
-    - name: List Services
-      win_commad: net start
-      register: Services
-    - debug:
-        var: Services.stdout_lines
+- name: Execute Windows Commands
+  hosts: win
+  tasks:
+    - name: List the services
+      ansible.windows.win_command: net start
+      register: services
+      ignore_errors: yes
 
-    - name: Getting system information
-      win_command: systeminfo.exe
+    - debug:
+        var: services.stdout_lines
+
+
+    - name: Get system information using systeminfo.exe
+      ansible.windows.win_command: systeminfo.exe
       register: sysinfo
+
     - debug:
         var: sysinfo.stdout_lines
