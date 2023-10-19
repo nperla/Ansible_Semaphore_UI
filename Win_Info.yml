@@ -2,7 +2,8 @@
 - name: Run ipconfig on Windows Server
   hosts: win
   collections:
-    - name: ansible.windows.community.windows
+    - ansible.windows
+    - community.windows
   tasks:
     - name: Run ipconfig /all
       ansible.windows.win_command: ipconfig /all
