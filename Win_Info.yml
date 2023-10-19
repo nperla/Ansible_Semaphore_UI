@@ -1,0 +1,22 @@
+---
+- name: Run ipconfig on Windows Server
+  hosts: win
+  tasks:
+    - name: Run ipconfig /all
+      win_command: ipconfig /all
+      register: ipconfig_output
+    - name: Display ipconfig output
+      debug:
+        var: ipconfig_output.stdout
+
+    - name: List Services
+      win_commad: net start
+      register: Services
+    - debug:
+        var: Services.stdout_lines
+
+    - name: Getting system information
+      win_command: systeminfo.exe
+      register: sysinfo
+    - debug:
+        var: sysinfo.stdout_lines
