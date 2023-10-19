@@ -1,4 +1,6 @@
 ---
+- import_playbook: req.yml
+
 - name: Run ipconfig on Windows Server
   hosts: win
   tasks:
