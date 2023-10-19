@@ -1,4 +1,5 @@
 ---
-collections:
-  - ansible.windows
-  - community.windows
+- hosts: win
+  collections:
+    - ansible.windows
+    - community.windows
