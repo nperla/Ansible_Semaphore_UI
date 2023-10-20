@@ -1,5 +1,13 @@
 ---
-- import_playbook: req.yml
+#- import_playbook: req.yml
+- name: Installing Ansible collections
+  hosts: Linux
+  gather_facts: flase
+  become: yes
+  tasks:
+    - name: Installing collection
+      command: ansible-galaxy collection install community.windows
+
 
 - name: Run ipconfig on Windows Server
   hosts: win
