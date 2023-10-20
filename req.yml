@@ -1,5 +1,5 @@
 ---
 - hosts: win
   collections:
-    - ansible.windows
-    - community.windows
+    - ansible.windows.win_command
+    - community.windows.win_command
