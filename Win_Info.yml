@@ -1,5 +1,5 @@
 ---
-- import_playbook: requirements.yml
+#- import_playbook: requirements.yml
 
 - name: Run ipconfig on Windows Server
   hosts: win
